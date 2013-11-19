@@ -13,10 +13,24 @@ class LibrariesController < ApplicationController
     @library = Library.find(params[:id])
     @library.books = Book.all  #should really be pulling books that have been associated with this library
 
+    @student = Student.find(params[:student][:student_id])
+
+    @library_activity = params[:library][:activity]
+
+  #binding.pry
+
+ #   {"student"=>{"student_id"=>"1"},
+ # "class"=>"checkout",
+ # "commit"=>"Check out a book",
+ # "action"=>"show",
+ # "controller"=>"libraries",
+ # "id"=>"1"}
+
     #the student
+    #@student = Student.find(params[:student[:student_id]])
 
     #the action that was requested: checkout or return
-    
+
   end
 
   # GET /libraries/new

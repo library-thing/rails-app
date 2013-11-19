@@ -13,3 +13,5 @@ group :doc do
 end
 
 gem 'annotate', ">=2.5.0", :group => :development
+gem 'pry', :group => :development
+

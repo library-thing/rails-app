@@ -3,4 +3,5 @@ class SiteController < ApplicationController
     @library = Library.find(1)
     @students = Student.all
   end
+
 end

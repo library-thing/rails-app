@@ -13,11 +13,10 @@ class LibrariesController < ApplicationController
     @library = Library.find(params[:id])
     @library.books = Book.all  #should really be pulling books that have been associated with this library
 
+  # gets student and library_activity params
     @student = Student.find(params[:student][:student_id])
-
     @library_activity = params[:library][:activity]
 
-  #binding.pry
 
  #   {"student"=>{"student_id"=>"1"},
  # "class"=>"checkout",

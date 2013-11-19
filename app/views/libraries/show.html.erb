@@ -17,11 +17,17 @@
 
 <p>
   <strong>Books in this library:</strong>
-  <ul>
+  <tbody>
   <% @library.books.each do |book| %>
-      <li><%= book.title %></li>
+      <% if book.available == true %>
+          <tr>
+            <td><p><%= book.title %></td>
+            <td>by <%= book.author %></p></td>
+          </tr>
+      <% else "It was a pleasure to burn." %>
+      <% end %> 
   <% end %>
-    </ul>
+</tbody>
 
 </p>
 

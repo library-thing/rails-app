@@ -9,7 +9,7 @@
   <strong>Books in this library:</strong>
   <ul>
   <% @library.books.each do |book| %>
-      <li><%= book.title %></li>
+      <li><%= link_to book.title book_path(book) %></li>
   <% end %>
     </ul>
 

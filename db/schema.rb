@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20131119174516) do
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "author"
   end
 
   create_table "libraries", force: true do |t|
@@ -24,7 +25,7 @@ ActiveRecord::Schema.define(version: 20131119174516) do
     t.datetime "updated_at"
   end
 
-  create_table "mais", force: true do |t|
+  create_table "mains", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end

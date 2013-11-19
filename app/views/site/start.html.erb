@@ -8,16 +8,8 @@
 <body>
 <h1>Welcome to Library Thing</h1>
   <form action="start_submit" method="get" accept-charset="utf-8">
+  <%= select("student", "student_id", @students.collect {|student| [ student.name, student.id ] },  {prompt:'Select a Student...'}) %>
   <p>
-    <select>
-      <option value="anders_ramsay" selected>Select a student...</option>
-      <option value="anders_ramsay">Alex Chiu</option>
-      <option value="anders_ramsay">Brendan Manley</option>
-      <option value="anders_ramsay">Ivan Brennan</option>
-      <option value="anders_ramsay">Michael Polycarpou</option>
-    </select>
-    </p>
-    <p>
     <button type="">Check out a Book</button>
     <p>
     </p>

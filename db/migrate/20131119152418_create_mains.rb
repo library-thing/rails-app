@@ -1,6 +1,6 @@
 class CreateMains < ActiveRecord::Migration
   def change
-    create_table :mais do |t|
+    create_table :mains do |t|
 
       t.timestamps
     end

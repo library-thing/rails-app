@@ -10,10 +10,10 @@
   <form action="start_submit" method="get" accept-charset="utf-8">
   <%= select("student", "student_id", @students.collect {|student| [ student.name, student.id ] },  {prompt:'Select a Student...'}) %>
   <p>
-    <button type="">Check out a Book</button>
-    <p>
+  <%= link_to "Check out a Book", library_path(@library) %>
     </p>
-    <button type="">Return a Book</button>
+    <p>
+     <%= link_to "Return a Book", '#' %>
     </p>
   </form>
 </body>

@@ -11,7 +11,12 @@ class LibrariesController < ApplicationController
   # GET /libraries/1.json
   def show
     @library = Library.find(params[:id])
-    @library.books = Book.all
+    @library.books = Book.all  #should really be pulling books that have been associated with this library
+
+    #the student
+
+    #the action that was requested: checkout or return
+    
   end
 
   # GET /libraries/new

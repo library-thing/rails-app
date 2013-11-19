@@ -6,19 +6,23 @@
       <th>Title</th>
       <th>Author</th>
       <th></th>
-      <th></th>
     </tr>
   </thead>
 
   <tbody>
+    <!-- 1. when books are available (t), iterate and show all available books. 
+         2. when no books are available (f), print out "It was a a pleasure to burn." -->
     <% @books.each do |book| %>
-      <tr>
-        <td><%= book.title %></td>
-        <td><%= book.author %></td>
-        <td><%= link_to 'Show', book %></td>
-        <td><%= link_to 'Edit', edit_book_path(book) %></td>
-        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <% if book.available == true %>
+          <tr>
+            <td><%= book.title %></td>
+            <td><%= book.author %></td>
+            <td><%= link_to 'Show', book %></td>
+            <td><%= link_to 'Edit', edit_book_path(book) %></td>
+            <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+      <% else "It was a pleasure to burn." %>
+      <% end %> 
     <% end %>
   </tbody>
 </table>

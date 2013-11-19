@@ -1,29 +1,30 @@
 <p id="notice"><%= notice %></p>
+ <h1><%= @library.name %> Library</h1>
+ <% if @library_activity == "checkout" %>
+ <h2>Hi <%= @student.name %>, Please select a book to check out</h2>
+ <% elsif  @library_activity == "return" %>
+ <h2>Hi <%= @student.name %>, Please select a book to return</h2>
 
-<p>
-  <strong>Name:</strong>
-  <%= @library.name %>
-</p>
+ <% else %>
+ <h2>Hi <%= @student.name %>, Please browse our books</h2>
+ <% end %>
 
-<p>
-  <strong>Student:</strong>
-  <%= @student.name %>
-</p>
+<form action="libraries/<%= @library.id %>" method="get" accept-charset="utf-8">
 
-<p>
-  <strong>Action:</strong>
-  <%= @library_activity %>
-</p>
-
-<p>
-  <strong>Books in this library:</strong>
-  <ul>
+<ul style="list-style: none;margin-left:0;padding-left:0">
   <% @library.books.each do |book| %>
-      <li><%= book.title %></li>
+    <li><label><%= radio_button_tag("book[book_id]", book.id) %><%= book.title %></label>
+    </li>
   <% end %>
-    </ul>
+</ul>
 
-</p>
+<p>
+      <%= submit_tag "Check out the selected book" %>
+    </p>
+  </form>
+
+  
+
 
 
 <%= link_to 'Edit', edit_library_path(@library) %> |

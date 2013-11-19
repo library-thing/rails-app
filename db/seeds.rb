@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-ruby_003_students = Student.create([{name:'Alex Chiu'},{name:'Amanda Himmelstoss'},{name:'Alex Chiu'},{name:'Anders Ramsay '},{name:'Bana Malik'},{name:'Brendan Manley'}])
+@ruby_003_students = Student.create([{name:'Alex Chiu'},{name:'Amanda Himmelstoss'},{name:'Anders Ramsay '},{name:'Bana Malik'},{name:'Brendan Manley'}])
 
 
 # Charlotte Chang

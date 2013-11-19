@@ -1,6 +1,6 @@
 LibraryThing::Application.routes.draw do
+  resources :libraries
   resources :students
-
   resources :books
   root 'site#start'
 

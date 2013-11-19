@@ -6,7 +6,7 @@
   <title>Welcome to Library Thing!</title>
 </head>
 <body>
-<h1>Welcome to The Flatiron School Library</h1>
+<h1>Welcome to the <%= @library.name %> Library</h1>
   <form action="start_submit" method="get" accept-charset="utf-8">
   <%= select("student", "student_id", @students.collect {|student| [ student.name, student.id ] },  {prompt:'Select a Student...'}) %>
   <p>

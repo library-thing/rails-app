@@ -16,7 +16,9 @@ books = Book.create([{ title: 'Patterns of Enterprise Application Architecture',
     { title: 'Domain-Driven Design', author: 'Eric Evans', available: false },
     { title: 'Close to the Machine', author: 'Ellen Ullman ', available: true },
     { title: 'Rails Test Prescriptions: Keeping Your Application Healthy', author: 'Noel Rappin', available: false }
-  ])
+])
+
+library = Library.create([{name:"Flatiron School"}])
 
 @ruby_003_students = Student.create([
     {name:'Alex Chiu'},

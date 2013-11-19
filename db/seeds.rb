@@ -18,43 +18,63 @@
     { title: 'Rails Test Prescriptions: Keeping Your Application Healthy', author: 'Noel Rappin' }
   ])
 
-@ruby_003_students = Student.create([{name:'Alex Chiu'},{name:'Amanda Himmelstoss'},{name:'Anders Ramsay '},{name:'Bana Malik'},{name:'Brendan Manley'}])
+@ruby_003_students = Student.create([
+    {name:'Alex Chiu'},
+    {name:'Amanda Himmelstoss'},
+    {name:'Anders Ramsay '},
+    {name:'Bana Malik'},
+    {name:'Charlotte Chang'},
+    {name:'Christopher Lee'},
+    {name:'Daniel Chang'},
+    {name:'David Bella'},
+    {name:'Edina Vath'},
+    {name:'Emily Xie'},
+    {name:'Greg Eng'},
+    {name:'Ian Miller'},
+    {name:'Iris Lee'},
+    {name:'Ivan Brennan'},
+    {name:'James Tong'},
+    {name:'Joe O\'Conor'},
+    {name:'John Richardson'},
+    {name:'Josh Scaglione'},
+    {name:'Kyle Shike'},
+    {name:'Logan Hasson'},
+    {name:'Manuel Nehauser'},
+    {name:'Margaret Lee'},
+    {name:'Matt Campbell'},
+    {name:'Michael Polycarpou'},
+    {name:'Daniel Chang'},
+    {name:'David Bella'},
+    {name:'Edina Vath'},
+    {name:'Mike Spangler'},
+    {name:'Patrick Janson'},
+    {name:'Joe O\'Conor'},
+    {name:'Raymond Gan'},
+    {name:'Rosie Hoyem'},
+    {name:'Sam Yang'},
+    {name:'Samuel Owens'},
+    {name:'Saron Yitbarek'},
+    {name:'Scott Luptowski'},
+    {name:'Sonja Hall'},
+    {name:'Stephanie Oh'},
+    {name:'Theo Vora'},
+    {name:'David Bella'},
+    {name:'Edina Vath'},
+    {name:'Tiffany Peon'},
+    {name:'Theo Vora'},
+    {name:'Trevor McKendrick'},
+    {name:'Vinney Cavallo'},
+    {name:'Vivian Shangxuan Zhang'}
+    ])
 
 
-# Charlotte Chang
-# Christopher Lee
-# Daniel Chang
-# David Bella
-# Edina Vath
-# Emily Xie
-# Greg Eng
-# Ian Miller
-# Iris Lee
-# Ivan Brennan
-# James Tong
-# Jeanne Roniger
-# Joe O'Conor
-# John Richardson
-# Josh Scaglione
-# Kyle Shike
-# Logan Hasson
-# Manuel Nehauser
-# Margaret Lee
-# Matt Campbell
-# Michael Polycarpou
-# Mike Spangler
-# Patrick Janson
-# Raymond Gan
-# Rosie Hoyem
-# Sam Yang
-# Samuel Owens
-# Saron Yitbarek
-# Scott Luptowski
-# Sonja Hall
-# Stephanie Oh
-# Theo Vora
-# Tiffany Peon
-# Trevor McKendrick
-# Vinney Cavallo
-# Vivian Shangxuan Zhang
+
+
+
+
+
+
+
+
+
 

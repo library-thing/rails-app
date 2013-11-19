@@ -5,6 +5,16 @@
   <%= @library.name %>
 </p>
 
+<p>
+  <strong>Books:</strong>
+  <ul>
+  <% @library.books.each do |book| %>
+      <li><%= book.title %></li>
+  <% end %>
+    </ul>
+
+</p>
+
 
 <%= link_to 'Edit', edit_library_path(@library) %> |
 <%= link_to 'Back', libraries_path %>

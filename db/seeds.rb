@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-books = Book.create([{ title: 'Patterns of Enterprise Application Architecture', author: 'Martin Fowler' },  
+@sample_books = Book.create([{ title: 'Patterns of Enterprise Application Architecture', author: 'Martin Fowler' },  
     { title: 'Ender\'s Game', author: 'Orson Scott Card' },  
     { title: 'Tesla: Man Out of Time', author: 'Margaret Cheney' },  
     { title: 'Design <for> Hackers', author: 'David Kadavy' },

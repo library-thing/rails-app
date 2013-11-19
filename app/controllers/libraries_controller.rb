@@ -10,6 +10,8 @@ class LibrariesController < ApplicationController
   # GET /libraries/1
   # GET /libraries/1.json
   def show
+    @library = Library.find(params[:id])
+    @library.books = Book.all
   end
 
   # GET /libraries/new
@@ -69,6 +71,8 @@ class LibrariesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def library_params
-      params[:library].permit(:name)
+      params.require(:library).permit(:name)
     end
 end
+
+

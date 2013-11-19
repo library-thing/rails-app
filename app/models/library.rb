@@ -1,12 +1,13 @@
 # == Schema Information
 #
-# Table name: students
+# Table name: libraries
 #
 #  id         :integer          not null, primary key
-#  name       :string(255)
 #  created_at :datetime
 #  updated_at :datetime
+#  name       :string(255)
 #
 
-class Student < ActiveRecord::Base
+class Library < ActiveRecord::Base
+  has_many :books
 end

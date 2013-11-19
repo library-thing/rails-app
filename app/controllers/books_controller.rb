@@ -1,9 +1,5 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
-
-  def home
-
-  end
   
   # GET /books
   # GET /books.json

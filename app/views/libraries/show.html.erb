@@ -6,10 +6,10 @@
 </p>
 
 <p>
-  <strong>Books in this library:</strong>
+  <strong>Books in this:</strong>
   <ul>
   <% @library.books.each do |book| %>
-      <li><%= link_to book.title book_path(book) %></li>
+      <li><%= book.title %></li>
   <% end %>
     </ul>
 

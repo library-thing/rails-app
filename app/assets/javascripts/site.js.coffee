@@ -10,3 +10,6 @@ $(document).ready ->
       $( ".submit-library-action" ).removeAttr "disabled"
     else
       $(".submit-library-action").attr "disabled", "disabled"
+
+
+  

@@ -3,10 +3,10 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).ready ->
-  $("#submit-library-action").attr "disabled", "disabled"
+  $(".submit-library-action").attr "disabled", "disabled"
 
   $("#select-student").change ->
     if $("#select-student option:selected").val().length > 0
-      $( "#submit-library-action" ).removeAttr "disabled"
+      $( ".submit-library-action" ).removeAttr "disabled"
     else
-      $("#submit-library-action").attr "disabled", "disabled"
+      $(".submit-library-action").attr "disabled", "disabled"

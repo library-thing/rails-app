@@ -8,15 +8,15 @@
 <body>
   <h1>Welcome to the <%= @library.name %> Library</h1>
   <form action="libraries/<%= @library.id %>" method="get" accept-charset="utf-8">
+  <p>
     <%= select("student", "student_id", @students.collect {|student| [ student.name, student.id ] },  {prompt:'Select a Student...'}, id:"select-student") %>
+    </p>
     <p>
-       <label><%= radio_button_tag("library[activity]", "checkout") %> Check out a book</label>
-       </p>
-       <p>
-       <label><%= radio_button_tag("library[activity]", "return") %> Return a book</label>
-     </p>
-     <p>
-      <%= submit_tag "Continue", id:"submit-library-action" %>
+      <%= submit_tag "Check out a book", :name => 'book_checkout', class:"submit-library-action" %>
+    </p>
+
+    <p>
+      <%= submit_tag "Return a book", :name => 'book_return', class:"submit-library-action" %>
     </p>
   </form>
 </body>

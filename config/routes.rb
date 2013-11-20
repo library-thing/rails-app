@@ -4,6 +4,9 @@ LibraryThing::Application.routes.draw do
   resources :books
   root 'site#start'
 
+  get 'libraries/:id/checkout' => 'libraries#checkout'
+  get 'libraries/:id/checkout' => 'libraries#return'
+
 
   post 'libraries/libraries/:id/checkout' => 'libraries#checkout'
 

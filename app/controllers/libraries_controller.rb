@@ -12,16 +12,34 @@ class LibrariesController < ApplicationController
   # GET /libraries/1
   # GET /libraries/1.json
   def show
-    @library = Library.find(params[:id])
-    @library.books = Book.all  #should really be pulling books that have been associated with this library
-
-  # gets student and library_activity params
-    @student = Student.find(params[:student][:student_id])
-    @library_activity = params[:library][:activity]
+    if params[:book_checkout]
+      render :action => 'checkout' 
+    elsif params[:book_return]
+      render :action => 'return'
+    else
+      render :action => 'browse'
+    end
   end
 
   def checkout
     #set book as checked out
+    @library = Library.find(params[:id])
+   
+    # gets student and library_activity params
+    @student = Student.find(params[:student][:student_id])
+
+    # currently just pulling all books
+    # #should really be pulling availabl books for this library
+    @library.books = Book.all
+
+  end
+
+  def return
+    #handle return of a book
+  end
+
+  def browse
+    #currently using show to redirect based on user action so may need a separate action for simply browsing books in the library
   end
 
 

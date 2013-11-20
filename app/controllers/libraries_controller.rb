@@ -13,6 +13,11 @@ class LibrariesController < ApplicationController
   # GET /libraries/1.json
   def show
     if params[:book_checkout]
+      @library = Library.find(params[:id])
+      @student = Student.find(params[:student][:student_id])
+      # currently just pulling all books
+      # #should really be pulling availabl books for this library
+      @library.books = Book.all
       render :action => 'checkout' 
     elsif params[:book_return]
       render :action => 'return'
@@ -22,16 +27,6 @@ class LibrariesController < ApplicationController
   end
 
   def checkout
-    #set book as checked out
-    @library = Library.find(params[:id])
-   
-    # gets student and library_activity params
-    @student = Student.find(params[:student][:student_id])
-
-    # currently just pulling all books
-    # #should really be pulling availabl books for this library
-    @library.books = Book.all
-
   end
 
   def return

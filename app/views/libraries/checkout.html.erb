@@ -1,1 +1,17 @@
-<h1>Checking out a book</h1>
+<p id="notice"><%= notice %></p>
+ <h1><%= @library.name %> Library</h1>
+ <h2>Hi <%= @student.name %>, please select a book to check out</h2>
+
+<form action="<%= @library.id %>/checkout" method="post" accept-charset="utf-8">
+<ul style="list-style:none;margin-left:0;padding-left:0;">
+<% @library.books.each do |book| 
+    book_label_id = "books_book_id_ #{book.id}"
+    %>
+  <li style="padding-bottom:8px;"><label> <%= radio_button_tag("books[book_id]", book.id) %> <em><%= book.title %></em>, by <%= book.author %></label></li>
+  <% end %>
+</ul>
+
+  <p>
+    <%= submit_tag "Check out the selected book" %>
+  </p>
+</form>

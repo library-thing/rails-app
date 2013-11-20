@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20131120163132) do
     t.datetime "updated_at"
     t.string   "author"
     t.integer  "library_id"
+    t.boolean  "available"
   end
 
   create_table "libraries", force: true do |t|

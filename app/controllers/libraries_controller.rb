@@ -18,11 +18,11 @@ class LibrariesController < ApplicationController
       # currently just pulling all books
       # #should really be pulling availabl books for this library
       @library.books = Book.all
-      render :action => 'checkout' 
+      render :checkout 
     elsif params[:book_return]
-      render :action => 'return'
+      render :return
     else
-      render :action => 'browse'
+      render :browse
     end
   end
 

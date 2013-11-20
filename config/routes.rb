@@ -4,11 +4,11 @@ LibraryThing::Application.routes.draw do
   resources :books
   root 'site#start'
 
-  get 'libraries/:id/checkout' => 'libraries#checkout'
-  get 'libraries/:id/checkout' => 'libraries#return'
+  post 'libraries/:id/checkout' => 'libraries#checkout_confirm'
+  # get 'libraries/:id/checkout' => 'libraries#return'
 
 
-  post 'libraries/libraries/:id/checkout' => 'libraries#checkout'
+  # post 'libraries/libraries/:id/checkout' => 'libraries#checkout'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

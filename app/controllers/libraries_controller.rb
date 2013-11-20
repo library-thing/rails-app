@@ -16,9 +16,9 @@ class LibrariesController < ApplicationController
       @library = Library.find(params[:id])
       @student = Student.find(params[:student][:student_id])
       # currently just pulling all books
-      # #should really be pulling availabl books for this library
-      @library.books = Book.all
-      render :checkout 
+      # #should really be pulling available books for this library
+      @library.books
+      render :checkout_select
     elsif params[:book_return]
       render :return
     else
@@ -26,7 +26,10 @@ class LibrariesController < ApplicationController
     end
   end
 
-  def checkout
+  def checkout_select
+  end
+
+  def checkout_confirm
   end
 
   def return

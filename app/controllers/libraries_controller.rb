@@ -1,6 +1,8 @@
 class LibrariesController < ApplicationController
   before_action :set_library, only: [:show, :edit, :update, :destroy]
 
+  skip_before_filter :verify_authenticity_token
+
   # GET /libraries
   # GET /libraries.json
   def index
@@ -16,21 +18,12 @@ class LibrariesController < ApplicationController
   # gets student and library_activity params
     @student = Student.find(params[:student][:student_id])
     @library_activity = params[:library][:activity]
-
-
- #   {"student"=>{"student_id"=>"1"},
- # "class"=>"checkout",
- # "commit"=>"Check out a book",
- # "action"=>"show",
- # "controller"=>"libraries",
- # "id"=>"1"}
-
-    #the student
-    #@student = Student.find(params[:student[:student_id]])
-
-    #the action that was requested: checkout or return
-
   end
+
+  def checkout
+    #set book as checked out
+  end
+
 
   # GET /libraries/new
   def new

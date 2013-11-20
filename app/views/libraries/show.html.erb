@@ -9,7 +9,7 @@
  <h2>Hi <%= @student.name %>, please browse our books</h2>
  <% end %>
 
-<form action="libraries/<%= @library.id %>" method="post" accept-charset="utf-8">
+<form action="<%= @library.id %>/checkout" method="post" accept-charset="utf-8">
 <ul style="list-style:none;margin-left:0;padding-left:0;">
 <% @library.books.each do |book| 
     book_label_id = "books_book_id_ #{book.id}"

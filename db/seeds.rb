@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-books = Book.create([{ title: 'Patterns of Enterprise Application Architecture', author: 'Martin Fowler' },  
+all_books = Book.create([{ title: 'Patterns of Enterprise Application Architecture', author: 'Martin Fowler' },  
     { title: 'Ender\'s Game', author: 'Orson Scott Card' },  
     { title: 'Tesla: Man Out of Time', author: 'Margaret Cheney' },  
     { title: 'Design <for> Hackers', author: 'David Kadavy' },
@@ -18,7 +18,8 @@ books = Book.create([{ title: 'Patterns of Enterprise Application Architecture',
     { title: 'Rails Test Prescriptions: Keeping Your Application Healthy', author: 'Noel Rappin' }
 ])
 
-library = Library.create([{name:"Flatiron School"}])
+library = Library.create(name: "Flatiron School")
+library.books << all_books
 
 @ruby_003_students = Student.create([
     {name:'Alex Chiu'},

@@ -18,6 +18,8 @@ all_books = Book.create([{ title: 'Patterns of Enterprise Application Architectu
     { title: 'Rails Test Prescriptions: Keeping Your Application Healthy', author: 'Noel Rappin' }
 ])
 
+ #raise all_books.inspect
+
 library = Library.create(name: "Flatiron School")
 library.books << all_books
 

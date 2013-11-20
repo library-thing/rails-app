@@ -11,6 +11,11 @@
 #
 
 class Book < ActiveRecord::Base
-  belongs_to :library
-  belongs_to :student
+  has_many :library_books
+  has_many :libraries, :through => :library_books
+
+  #belongs_to :library
+  has_many :student_books
+  has_many :students, :through => :student_books
+
 end

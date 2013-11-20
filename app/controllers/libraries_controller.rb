@@ -38,11 +38,11 @@ class LibrariesController < ApplicationController
  # "id"=>"1"}
 
     #associate book with student
-    # @student = Student.find(params[:student_id])
-    # @book = Book.find(params[:books][:book_id])
+    @student = Student.find(params[:student_id])
+    @book = Book.find(params[:books][:book_id])
 
-    # #@student.books = StudentBook.where()
-    # @student.books << @book
+    @student.books = StudentBook.where(:student_id => @student.id)
+    @student.books << @book
 
     # #set book in library as not available
     # @library = Library.find(params[:id])

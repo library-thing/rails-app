@@ -7,6 +7,7 @@
 </head>
 <body>
   <h1>Welcome to the <%= @library.name %> Library</h1>
+  
   <form action="libraries/<%= @library.id %>" method="get" accept-charset="utf-8">
   <p>
     <%= select("student", "student_id", @students.collect {|student| [ student.name, student.id ] },  {prompt:'Select a Student...'}, id:"select-student") %>

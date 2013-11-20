@@ -10,6 +10,7 @@
   <li style="margin-bottom:8px; padding:2px; background-color:#eeeeee;cursor:pointer"><label> <%= radio_button_tag("books[book_id]", book.id) %> <em><%= book.title %></em>, by <%= book.author %></label></li>
   <% end %>
 </ul>
+<input type="hidden" name="student_id" value="<%= @student.id %>">
 
   <p>
     <%= submit_tag "Check out the selected book", class:"submit-button" %>

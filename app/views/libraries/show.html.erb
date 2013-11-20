@@ -9,32 +9,15 @@
  <h2>Hi <%= @student.name %>, please browse our books</h2>
  <% end %>
 
-<form action="libraries/<%= @library.id %>" method="get" accept-charset="utf-8">
-<table>
-  <thead>
-    <tr>
-      <th>Select</th>
-      <th>Title</th>
-      <th>Author</th>
-    </tr>
-  </thead>
-  <tbody>
-  <% @library.books.each do |book| %>
-      <% if book.available == true %>
-          <tr>
-          <td><%= radio_button_tag("book[book_id]", book.id) %></td>
-            <td><%= label_tag "book[book_id]", book.title %></td>
-            <td><label for="<%= book[book_id] %>">by </label>
-            <%= label_tag "book[book_id]", book.author %></td>
-          </tr>
-      <% else %>
-      <tr>
-      <td>Sorry, no books found :-/</td>
-    </tr>
-      <% end %> 
+<form action="libraries/<%= @library.id %>" method="post" accept-charset="utf-8">
+<ul style="list-style:none;margin-left:0;padding-left:0;">
+<% @library.books.each do |book| 
+    book_label_id = "books_book_id_ #{book.id}"
+    %>
+  <li style="padding-bottom:8px;"><label> <%= radio_button_tag("books[book_id]", book.id) %> <em><%= book.title %></em>, by <%= book.author %></label></li>
   <% end %>
-  </tbody>
-</table>
+</ul>
+
   <p>
     <%= submit_tag "Check out the selected book" %>
   </p>

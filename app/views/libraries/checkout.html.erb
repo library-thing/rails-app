@@ -7,7 +7,7 @@
 <% @library.books.each do |book| 
     book_label_id = "books_book_id_ #{book.id}"
     %>
-  <li><label> <%= radio_button_tag("books[book_id]", book.id) %> <em><%= book.title %></em>, by <%= book.author %></label></li>
+  <label><li><%= radio_button_tag("books[book_id]", book.id) %> <em><%= book.title %></em>, by <%= book.author %></li></label>
   <% end %>
 </ul>
 

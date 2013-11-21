@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131120163132) do
+ActiveRecord::Schema.define(version: 20131121161234) do
 
   create_table "books", force: true do |t|
     t.string   "title"
@@ -19,7 +19,17 @@ ActiveRecord::Schema.define(version: 20131120163132) do
     t.datetime "updated_at"
     t.string   "author"
     t.integer  "library_id"
+    t.boolean  "available"
   end
+
+  create_table "checkout_books", force: true do |t|
+    t.datetime "checkout_date"
+    t.integer  "book_id"
+    t.integer  "student_id"
+  end
+
+  add_index "checkout_books", ["book_id"], name: "index_checkout_books_on_book_id"
+  add_index "checkout_books", ["student_id"], name: "index_checkout_books_on_student_id"
 
   create_table "libraries", force: true do |t|
     t.datetime "created_at"
@@ -27,30 +37,10 @@ ActiveRecord::Schema.define(version: 20131120163132) do
     t.string   "name"
   end
 
-  create_table "library_books", force: true do |t|
-    t.integer "library_id"
-    t.integer "book_id"
-    t.boolean "available"
-  end
-
-  add_index "library_books", ["book_id"], name: "index_library_books_on_book_id"
-  add_index "library_books", ["library_id"], name: "index_library_books_on_library_id"
-
   create_table "mains", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "student_books", force: true do |t|
-    t.datetime "checkout_date"
-    t.integer  "book_id"
-    t.integer  "student_id"
-    t.integer  "library_id"
-  end
-
-  add_index "student_books", ["book_id"], name: "index_student_books_on_book_id"
-  add_index "student_books", ["library_id"], name: "index_student_books_on_library_id"
-  add_index "student_books", ["student_id"], name: "index_student_books_on_student_id"
 
   create_table "students", force: true do |t|
     t.string   "name"

@@ -18,7 +18,9 @@ class LibrariesController < ApplicationController
       @books = Book.where(:available => true)
       render :checkout_select
     elsif params[:book_return]
-      render :return
+      @library = Library.find(params[:id])
+      @student = Student.find(params[:student][:student_id])
+      render :return_select
     else
       render :browse
     end
@@ -36,8 +38,16 @@ class LibrariesController < ApplicationController
     @checkedout_book = @student.books.find(@book.id)
   end
 
-  def return
-    #handle return of a book
+  def return_select
+  end
+
+  def return_confirm
+    @library = Library.find(params[:id])
+    @student = Student.find(params[:student_id])
+    @book = Book.find(params[:books][:book_id])
+    @returned_book = @student.books.find(@book.id)
+    @student.books.delete(@book)
+    @book.available = true
   end
 
   def browse

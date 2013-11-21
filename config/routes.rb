@@ -5,6 +5,7 @@ LibraryThing::Application.routes.draw do
   root 'site#start'
 
   post 'libraries/:id/checkout_confirm' => 'libraries#checkout_confirm'
+  post 'libraries/:id/return_confirm' => 'libraries#return_confirm'
   # get 'libraries/:id/checkout' => 'libraries#return'
 
 

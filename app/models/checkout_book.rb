@@ -9,7 +9,7 @@
 #  library_id    :integer
 #
 
-class StudentBook < ActiveRecord::Base
+class CheckoutBook < ActiveRecord::Base
   belongs_to :student
   belongs_to :book
 end

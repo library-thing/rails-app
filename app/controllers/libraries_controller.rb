@@ -15,7 +15,7 @@ class LibrariesController < ApplicationController
     if params[:book_checkout]
       @library = Library.find(params[:id])
       @student = Student.find(params[:student][:student_id])
-      @library.books
+      @books = Book.where(:available => true)
       render :checkout_select
     elsif params[:book_return]
       render :return
@@ -40,7 +40,7 @@ class LibrariesController < ApplicationController
 @student = Student.find(params[:student_id])
 @book = Book.find(params[:books][:book_id])
 
-@library.books.make_book_unavailable(@book)
+@book.available = false
 
 #  @library.books[@book.id].available = false
 

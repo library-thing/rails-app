@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20131121161234) do
     t.datetime "updated_at"
     t.string   "author"
     t.integer  "library_id"
-    t.boolean  "available"
+    t.boolean  "available",  default: true
   end
 
   create_table "checkout_books", force: true do |t|

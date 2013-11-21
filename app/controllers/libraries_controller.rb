@@ -28,33 +28,12 @@ class LibrariesController < ApplicationController
   end
 
   def checkout_confirm
- #    {"books"=>{"book_id"=>"20"},
- # "student_id"=>"1",
- # "commit"=>"Check out the selected book",
- # "controller"=>"libraries",
- # "action"=>"checkout_confirm",
- # "id"=>"1"}
-@library = Library.find(params[:id])
-
-#associate book with student
-@student = Student.find(params[:student_id])
-@book = Book.find(params[:books][:book_id])
-
-@book.available = false
-
-#  @library.books[@book.id].available = false
-
-  #set book in library as not available
-  #@library.book(@book).available = false 
-
-    # @student.books = StudentBook.where(:student_id => @student.id)
-    # @student.books << @book
-
-    
-    
-
-    # display a notice that the book is now checked out (and please don't forget to return it :)
-
+    @library = Library.find(params[:id])
+    @student = Student.find(params[:student_id])
+    @book = Book.find(params[:books][:book_id])
+    @student.books << @book
+    @book.available = false
+    @checkedout_book = @student.books.find(@book.id)
   end
 
   def return

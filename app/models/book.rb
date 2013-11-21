@@ -14,7 +14,6 @@ class Book < ActiveRecord::Base
   has_many :library_books
   has_many :libraries, :through => :library_books
 
-  #belongs_to :library
   has_many :student_books
   has_many :students, :through => :student_books
 

@@ -15,8 +15,6 @@ class LibrariesController < ApplicationController
     if params[:book_checkout]
       @library = Library.find(params[:id])
       @student = Student.find(params[:student][:student_id])
-      # currently just pulling all books
-      # #should really be pulling available books for this library
       @library.books
       render :checkout_select
     elsif params[:book_return]
@@ -36,16 +34,23 @@ class LibrariesController < ApplicationController
  # "controller"=>"libraries",
  # "action"=>"checkout_confirm",
  # "id"=>"1"}
+@library = Library.find(params[:id])
 
-    #associate book with student
-    @student = Student.find(params[:student_id])
-    @book = Book.find(params[:books][:book_id])
+#associate book with student
+@student = Student.find(params[:student_id])
+@book = Book.find(params[:books][:book_id])
 
-    @student.books = StudentBook.where(:student_id => @student.id)
-    @student.books << @book
+@library.books.make_book_unavailable(@book)
 
-    # #set book in library as not available
-    # @library = Library.find(params[:id])
+#  @library.books[@book.id].available = false
+
+  #set book in library as not available
+  #@library.book(@book).available = false 
+
+    # @student.books = StudentBook.where(:student_id => @student.id)
+    # @student.books << @book
+
+    
     
 
     # display a notice that the book is now checked out (and please don't forget to return it :)

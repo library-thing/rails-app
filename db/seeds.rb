@@ -18,10 +18,14 @@ all_books = Book.create([{ title: 'Patterns of Enterprise Application Architectu
     { title: 'Rails Test Prescriptions: Keeping Your Application Healthy', author: 'Noel Rappin' }
 ])
 
- #raise all_books.inspect
 
 library = Library.create(name: "Flatiron School")
 library.books << all_books
+#iterate through all books in library.books and set available to true
+
+library.books.each do |book|
+  LibraryBook.book.available = true  
+end
 
 @ruby_003_students = Student.create([
     {name:'Alex Chiu'},

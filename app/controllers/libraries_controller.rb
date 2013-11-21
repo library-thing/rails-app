@@ -20,8 +20,15 @@ class LibrariesController < ApplicationController
     elsif params[:book_return]
       @library = Library.find(params[:id])
       @student = Student.find(params[:student][:student_id])
-      render :return_select
-    else
+      #AND the student has checkedout books
+      if @student.books.length > 0
+      #keep going if student has books to return   
+        render :return_select
+      else 
+        #display a message and do not leave home page
+        redirect_to root_url, notice: "you do not have any books checkedout"
+      end
+    else 
       render :browse
     end
   end

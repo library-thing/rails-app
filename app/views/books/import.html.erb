@@ -1,0 +1,7 @@
+<h1>Import Books</h1>
+
+<%= form_tag import_books_path, :multipart => true do %>
+
+<%= file_field_tag :file %>
+<%= submit_tag "Import" %>
+<% end %>

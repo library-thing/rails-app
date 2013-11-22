@@ -1,8 +1,11 @@
-<h1>Hi <%= @student.name %>, you've checked out the following book:</h1>
+<h1>Hi <%= @student.name %>, you've checked out the following books:</h1>
+<ul>
+<% @checkedout_books.each do |book| %>
+  <li><%= book.title %></li>
+  <% end %>
+</ul>
 
-<h2><%= @checkedout_book.title %></h2>
-
-<p>Please don't forget to return this book or Avi will find you :-)</p>
+<p>Please don't forget to return these books or Avi will find you :-)</p>
 <p><input type="button" value="Back to Library" name="ClickBack" onclick=(history.back())>
 </p>
 

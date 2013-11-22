@@ -1,7 +1,16 @@
 LibraryThing::Application.routes.draw do
   resources :libraries
   resources :students
+
+  get 'books/import' => 'books#import'
+  post 'books/import' => 'books#import'
+
   resources :books
+
+  #  do
+  #   collection {post :import}
+  # end
+
   root 'site#start'
 
   post 'libraries/:id/checkout_confirm' => 'libraries#checkout_confirm'

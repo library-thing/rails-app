@@ -6,19 +6,17 @@
   <title>Welcome to Library Thing!</title>
 </head>
 <body background="assets/images/librarybackground.jpg">
-  <h1>Welcome to the <%= @library.name %> Library</h1>
-  
-  <form action="libraries/<%= @library.id %>" method="get" accept-charset="utf-8">
-  <p>
-    <%= select("student", "student_id", @students.collect {|student| [ student.name, student.id ] },  {prompt:'Select a Student...'}, id:"select-student") %>
-    </p>
-    <p>
-      <%= submit_tag "Check out a book", :name => 'book_checkout', class:"submit-library-action" %>
-    </p>
+  <form action="libraries/<%= @library.id %>" method="get" accept-charset="utf-8" role="form">
+  <div class="form-group select-student">
+    <%= select("student", "student_id", @students.collect {|student| [ student.name, student.id ] },  {prompt:'Select a Student...'}, id:"select-student", class:"form-control") %>
+    </div>
+     <div class="form-group">
+      <%= submit_tag "Check out a book", :name => 'book_checkout', class:"submit-library-action btn btn-success" %>
+    </div>
 
-    <p>
-      <%= submit_tag "Return a book", :name => 'book_return', class:"submit-library-action" %>
-    </p>
+   <div class="form-group">
+      <%= submit_tag "Return a book", :name => 'book_return', class:"submit-library-action btn btn-primary" %>
+    </div>
   </form>
 </body>
 </html>

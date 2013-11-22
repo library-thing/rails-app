@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
- <h1><%= @library.name %> Library</h1>
  <h2>Hi <%= @student.name %>, please select the book you'd like to return:</h2>
 
 <form action="<%= @library.id %>/return_confirm" method="post" accept-charset="utf-8">
@@ -15,6 +13,6 @@
 <input type="hidden" name="student_id" value="<%= @student.id %>">
 
   <p>
-    <%= submit_tag "Return the selected book", class:"submit-button" %>
+    <%= submit_tag "Return the selected book", class:"submit-button btn btn-success" %>
   </p>
 </form>

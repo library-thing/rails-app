@@ -70,15 +70,12 @@ class LibrariesController < ApplicationController
     @library = Library.find(params[:id])
     @student = Student.find(params[:student_id])
     @book = Book.find(params[:books][:book_id])
-    # @returned_book = @student.books.find(@book.id)
-    # @student.books.delete(@book)
-    # @book.available = true
 
     selected_books = params[:books][:book_id]
     @returned_books = []
 
     selected_books.each do |book_id|
-      @student.books(:book_id => book_id).delete
+      @student.checkout_books.delete(:book_id => book_id)
       book = Book.find(book_id)
       book.available = true
       book.save

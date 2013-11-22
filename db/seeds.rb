@@ -6,21 +6,21 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-all_books = Book.create([{ title: 'Patterns of Enterprise Application Architecture', author: 'Martin Fowler', available: true },  
-    { title: 'Ender\'s Game', author: 'Orson Scott Card', available: true },  
-    { title: 'Tesla: Man Out of Time', author: 'Margaret Cheney', available: true },  
-    { title: 'Design <for> Hackers', author: 'David Kadavy', available: true },
-    { title: 'Beginning Database Design: From Novice to Professional', author: 'Clare Churcher', available: true }, 
-    { title: 'How to Win Friends and Influence People', author: 'Dale Carnegie', available: true },
-    { title: 'How to Solve It', author: 'G. Polya', available: true },
-    { title: 'Domain-Driven Design', author: 'Eric Evans', available: true },
-    { title: 'Close to the Machine', author: 'Ellen Ullman', available: true },
-    { title: 'Rails Test Prescriptions: Keeping Your Application Healthy', author: 'Noel Rappin', available: false }
-])
+# all_books = Book.create([{ title: 'Patterns of Enterprise Application Architecture', author: 'Martin Fowler', available: true },  
+#     { title: 'Ender\'s Game', author: 'Orson Scott Card', available: true },  
+#     { title: 'Tesla: Man Out of Time', author: 'Margaret Cheney', available: true },  
+#     { title: 'Design <for> Hackers', author: 'David Kadavy', available: true },
+#     { title: 'Beginning Database Design: From Novice to Professional', author: 'Clare Churcher', available: true }, 
+#     { title: 'How to Win Friends and Influence People', author: 'Dale Carnegie', available: true },
+#     { title: 'How to Solve It', author: 'G. Polya', available: true },
+#     { title: 'Domain-Driven Design', author: 'Eric Evans', available: true },
+#     { title: 'Close to the Machine', author: 'Ellen Ullman', available: true },
+#     { title: 'Rails Test Prescriptions: Keeping Your Application Healthy', author: 'Noel Rappin', available: false }
+# ])
 
 
 library = Library.create(name: "Flatiron School")
-library.books << all_books
+#library.books << all_books
 #iterate through all books in library.books and set available to true
 
 # library.books.each do |book|

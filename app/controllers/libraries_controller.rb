@@ -75,7 +75,8 @@ class LibrariesController < ApplicationController
     @returned_books = []
 
     selected_books.each do |book_id|
-      @student.checkout_books.delete(:book_id => book_id)
+      book_to_return = @student.checkout_books(:book_id => book_id)
+      book_to_return.delete
       book = Book.find(book_id)
       book.available = true
       book.save

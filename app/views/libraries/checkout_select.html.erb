@@ -13,7 +13,7 @@ function goBack()
     book_label_id = "books_book_id_ #{book.id}"
     %>
     
-  <li><label> <%= check_box_tag("books[book_id][]", book.id) %> <em><%= book.title %></em>, by <%= book.author %></label></li>
+  <li><label> <%= check_box_tag("books[book_id][]", book.id) %> <em><%= book.title %></em>, by <%= book.authors %></label></li>
   <% end %>
 </ul>
 <input type="hidden" name="student_id" value="<%= @student.id %>">

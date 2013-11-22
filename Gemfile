@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 gem 'rails', '4.0.1'
-ruby "2.0.0"
 
 #Development gems
 gem 'sqlite3', :group => :development
@@ -20,12 +19,14 @@ gem 'jbuilder', '~> 1.2'
 
 #Production gems
 gem 'pg', :group => :production
-#possibly add this gem: gem 'rails_12factor', group: :production
+gem 'rails_12factor', group: :production
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
+
+ruby "2.0.0"
 
 
 

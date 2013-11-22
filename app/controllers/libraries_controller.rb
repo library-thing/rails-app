@@ -61,17 +61,6 @@ class LibrariesController < ApplicationController
 
     @student.save
     
-    # want to find all books that match
-    # Book.where(params[:books][:book_id]).each do |book|
-    #    @student.books << book
-    # end
-
-    #creating a separate
-  
-    # @checkedout_books = []
-
-    # @student.books.where(:book_id).each do |book|
-    #   @checkedout_books << book
   end
 
   def return_select
@@ -81,9 +70,23 @@ class LibrariesController < ApplicationController
     @library = Library.find(params[:id])
     @student = Student.find(params[:student_id])
     @book = Book.find(params[:books][:book_id])
-    @returned_book = @student.books.find(@book.id)
-    @student.books.delete(@book)
-    @book.available = true
+    # @returned_book = @student.books.find(@book.id)
+    # @student.books.delete(@book)
+    # @book.available = true
+
+    selected_books = params[:books][:book_id]
+    @returned_books = []
+
+    selected_books.each do |book_id|
+      @student.books(:book_id => book_id).delete
+      book = Book.find(book_id)
+      book.available = true
+      book.save
+      @returned_books << book
+    end
+
+    @student.save
+
   end
 
   def browse

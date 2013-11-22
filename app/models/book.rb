@@ -16,6 +16,4 @@ class Book < ActiveRecord::Base
   has_many :checkout_books
   has_many :students, :through => :checkout_books
 
-  serialize :authors
-
 end

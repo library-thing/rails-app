@@ -19,7 +19,7 @@ gem 'jbuilder', '~> 1.2'
 
 #Production gems
 gem 'pg', :group => :production
-gem 'rails_12factor', group: :production
+#possibly add this gem: gem 'rails_12factor', group: :production
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

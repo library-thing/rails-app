@@ -1,6 +1,10 @@
-<h1>Hi <%= @student.name %>, you've returned the following book:</h1>
+<h1>Hi <%= @student.name %>, you've returned the following book(s):</h1>
 
-<h2><%= @returned_book.title %></h2>
+<ul>
+<% @returned_books.each do |book| %>
+  <li><%= book.title %></li>
+  <% end %>
+</ul>
 
 <p>Thanks!</p>
 <p><input type="button" value="Back to Library" name="ClickBack" onclick=(history.back())></p>

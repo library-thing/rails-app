@@ -7,6 +7,11 @@ class BooksController < ApplicationController
     @books = Book.all
   end
 
+  def import
+    Book.import(params[:file])
+    redirect_to books_url, notice: "Books imported"  
+  end
+
   # GET /books/1
   # GET /books/1.json
   def show

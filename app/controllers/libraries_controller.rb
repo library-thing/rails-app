@@ -37,12 +37,30 @@ class LibrariesController < ApplicationController
   end
 
   def checkout_confirm
+   #    {"books"=>{"book_id"=>["1", "5", "8"]},
+   # "student_id"=>"4",
+   # "commit"=>"Check out selected books",
+   # "controller"=>"libraries",
+   # "action"=>"checkout_confirm",
+   # "id"=>"1"}  
+
     @library = Library.find(params[:id])
     @student = Student.find(params[:student_id])
-    @book = Book.find(params[:books][:book_id])
-    @student.books << @book
-    @book.available = false
-    @checkedout_book = @student.books.find(@book.id)
+    
+    # get all books from books[:book_id][in here]
+    selected_books = params[:books][:book_id]
+    @checkedout_books = []
+
+    selected_books.each do |book_id|
+      @student.checkout_books.build(:book_id => book_id)
+      book = Book.find(book_id)
+      book.available = false
+      book.save
+      @checkedout_books << book
+    end
+
+    @student.save
+    
   end
 
   def return_select
@@ -52,9 +70,20 @@ class LibrariesController < ApplicationController
     @library = Library.find(params[:id])
     @student = Student.find(params[:student_id])
     @book = Book.find(params[:books][:book_id])
-    @returned_book = @student.books.find(@book.id)
-    @student.books.delete(@book)
-    @book.available = true
+
+    selected_books = params[:books][:book_id]
+    @returned_books = []
+
+    selected_books.each do |book_id|
+      @student.checkout_books.delete(:book_id => book_id)
+      book = Book.find(book_id)
+      book.available = true
+      book.save
+      @returned_books << book
+    end
+
+    @student.save
+
   end
 
   def browse

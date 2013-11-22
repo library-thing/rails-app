@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Welcome to Library Thing!</title>
 </head>
-<body background="assets/images/librarybackground.jpg">
+<body background="assets/images/librarybackground.jpg"> -->
   <form action="libraries/<%= @library.id %>" method="get" accept-charset="utf-8" role="form">
   <div class="form-group select-student">
     <%= select("student", "student_id", @students.collect {|student| [ student.name, student.id ] },  {prompt:'Select a Student...'}, id:"select-student", class:"form-control") %>
@@ -18,5 +18,5 @@
       <%= submit_tag "Return books", :name => 'book_return', class:"submit-library-action btn btn-primary" %>
     </div>
   </form>
-</body>
-</html>
+<!-- </body>
+</html> -->

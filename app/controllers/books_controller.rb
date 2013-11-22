@@ -20,6 +20,12 @@ class BooksController < ApplicationController
   # GET /books/new
   def new
     @book = Book.new
+    #for a book, when 'submitted':
+    #1. save book to db
+    #2. set available to true
+    #3. set library to flatiron school
+    #4. view in /books
+    #5. available to view in libraries/1
   end
 
   # GET /books/1/edit

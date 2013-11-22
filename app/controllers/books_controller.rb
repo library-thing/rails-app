@@ -14,7 +14,7 @@ class BooksController < ApplicationController
 
   # GET /books/new
   def new
-    @book = Book.new
+    @book = Book.new(:available => true, :library_id => 1)
     #for a book, when 'submitted':
     #1. save book to db
     #2. set available to true
@@ -75,6 +75,6 @@ class BooksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
-      params.require(:book).permit(:title, :author, :available)
+      params.require(:book).permit(:title, :authors, :available, :library_id, :series, :edition)
     end
 end

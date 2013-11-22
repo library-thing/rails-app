@@ -9,7 +9,7 @@
          2. when no books are available (f), print out "It was a a pleasure to burn." -->
     <% @books.each do |book| %>
           <ul>
-            <li><%= book.title %> by <%= book.author %></li>
+            <li><%= book.title %> by <%= book.authors %></li>
           </ul>
     <% end %>
   </tbody>

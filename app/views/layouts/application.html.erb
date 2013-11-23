@@ -22,7 +22,7 @@
           <!-- <a class="navbar-brand" href="">Flatiron School Library</a> -->
         </div>
         <div class="navbar-collapse collapse">
-     <!--      <ul class="nav navbar-nav">
+<!--           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Link</a></li>
             <li><a href="#">Link</a></li>
             <li><a href="#">Link</a></li>
@@ -39,11 +39,15 @@
               </ul>
             </li>
           </ul> -->
-     <!--      <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="./">Default</a></li>
-            <li><a href="../navbar-static-top/">Static top</a></li>
-            <li><a href="../navbar-fixed-top/">Fixed top</a></li>
-          </ul> -->
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown user-info">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+<img class="gravatar" src="<%= current_user.gravatar_url %>" alt="<%= current_user.login %> gravatar"> <%= current_user.login %><b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Sign Out", signout_path %></li>
+              </ul>
+            </li>
+          </ul>
         </div><!--/.nav-collapse -->
       </div>
       <div class="content">

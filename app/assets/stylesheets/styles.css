@@ -7570,34 +7570,48 @@ td.visible-print {
     display: none !important;
   }
 }
-/* line 5, ../sass/styles.scss */
+/* line 7, ../sass/styles.scss */
 .content {
   padding-left: 1em;
 }
 
-/* line 10, ../sass/styles.scss */
+/* line 14, ../sass/styles.scss */
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -100px;
+  text-align: center;
+}
+
+/* line 22, ../sass/styles.scss */
+.login-button {
+  max-width: 200px;
+}
+
+/* line 29, ../sass/styles.scss */
 .pick-list {
   list-style: none;
   margin-left: 0;
   padding-left: 0;
 }
-/* line 15, ../sass/styles.scss */
+/* line 34, ../sass/styles.scss */
 .pick-list li {
   margin-bottom: 8px;
   padding: 2px;
   background-color: #eeeeee;
   cursor: pointer;
 }
-/* line 21, ../sass/styles.scss */
+/* line 40, ../sass/styles.scss */
 .pick-list li label {
   font-weight: 300;
 }
-/* line 24, ../sass/styles.scss */
+/* line 43, ../sass/styles.scss */
 .pick-list li label em {
   font-weight: bold;
 }
 
-/* line 31, ../sass/styles.scss */
+/* line 50, ../sass/styles.scss */
 .select-student {
   width: 30%;
 }

@@ -17,6 +17,11 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 
+#Oauth
+gem 'octokit'
+gem 'omniauth-github', :git => 'git://github.com/intridea/omniauth-github.git'
+
+
 #Production gems
 gem 'pg', :group => :production
 gem 'rails_12factor', group: :production

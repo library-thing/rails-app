@@ -1,21 +1,28 @@
 LibraryThing::Application.routes.draw do
-  resources :libraries
-  resources :students
-
-  # get 'books/import' => 'books#import'
-  # post 'books/import' => 'books#import'
-
-  resources :books
-
-  #  do
-  #   collection {post :import}
-  # end
 
   root 'site#start'
 
+  get 'login' => 'users#login'
+  get 'logout' => 'sessions#destroy', as: :signout  
+
+  # OMNIAUTH
+  get '/auth/github/' => redirect('/auth/github')
+  get '/auth/github/callback', to: 'sessions#create'
+  #get '/auth/:provider/callback', :to => 'sessions#create'
+  get '/auth/failure' => redirect('/')
+
+  
+  #get '/auth/:provider/callback', to: 'sessions#create'
+  #get '/auth/failure' => redirect('/')
+  
+  #get '/signout', to: 'sessions#destroy', as: :signout
+
+  resources :libraries
+  resources :students
+  resources :books
+
   post 'libraries/:id/checkout_confirm' => 'libraries#checkout_confirm'
   post 'libraries/:id/return_confirm' => 'libraries#return_confirm'
-  # get 'libraries/:id/checkout' => 'libraries#return'
 
 
   # post 'libraries/libraries/:id/checkout' => 'libraries#checkout'

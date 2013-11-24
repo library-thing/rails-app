@@ -55,8 +55,10 @@ ActiveRecord::Schema.define(version: 20131123184421) do
     t.datetime "updated_at"
     t.string   "provider"
     t.string   "uid"
-    t.string   "login"
-    t.string   "gravatar_url"
+    t.string   "name"
+    t.string   "nickname"
+    t.string   "email"
+    t.string   "image_gravatar"
   end
 
 end

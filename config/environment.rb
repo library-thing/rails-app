@@ -9,8 +9,6 @@ LT_WEB_USER = ENV['LT_WEB_USER']
 LT_WEB_PWD = ENV['LT_WEB_PWD']
 LT_OAUTH_CLIENT_ID = ENV['LT_OAUTH_CLIENT_ID']
 LT_OAUTH_CLIENT_SECRET = ENV['LT_OAUTH_CLIENT_SECRET']
-GITHUB_PERSONAL_ACCESS_TOKEN = ENV['GITHUB_PERSONAL_ACCESS_TOKEN']
-DATABASE_URL = 'postgres://loaapunygsjawb:jc1hED5rCBMWwxdr_K-XPFya0P@ec2-107-20-228-206.compute-1.amazonaws.com:5432/da6kbs3lj65bgf'
 
 # Initialize the Rails application.
 LibraryThing::Application.initialize!

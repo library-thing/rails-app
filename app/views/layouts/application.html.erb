@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>LibraryThing</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -42,7 +42,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown user-info">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-<img class="gravatar" src="<%= current_user.gravatar_url %>" alt="<%= current_user.login %> gravatar"> <%= current_user.login %><b class="caret"></b></a>
+            <img class="gravatar" src="<%= current_user.image_gravatar %>" alt=""> <%= current_user.name %><b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><%= link_to "Sign Out", signout_path %></li>
               </ul>
@@ -52,9 +52,9 @@
       </div>
       <div class="content">
       <p id="notice"><%= notice %></p>
+
         
       <%= yield %>
-
       <div class="footer">
       <p>&copy; Company 2013</p>
     </div>
